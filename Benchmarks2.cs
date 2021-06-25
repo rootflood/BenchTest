@@ -4,9 +4,8 @@ using BenchmarkDotNet.Attributes;
 
 namespace ArrayIteration
 {
-    public class Benchmarks2 : ReadBenchmarksBase
+    public class Benchmarks2 : BenchmarksBase
     {
-        //[Benchmark(Baseline = true)]
         public int Array_For()
         {
             var array = _array;
