@@ -6,7 +6,7 @@ namespace ArrayIteration
 {
     public class Benchmarks2 : ReadBenchmarksBase
     {
-        [Benchmark(Baseline = true)]
+        //[Benchmark(Baseline = true)]
         public int Array_For()
         {
             var array = _array;

@@ -11,14 +11,17 @@ namespace ArrayIteration
     {
         static void Main(string[] args)
         {
-            var config = DefaultConfig.Instance
-                .WithSummaryStyle(SummaryStyle.Default.WithRatioStyle(RatioStyle.Trend))
-                .AddDiagnoser(MemoryDiagnoser.Default)
-                .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig(
-                    printSource: true,
-                    exportGithubMarkdown: true)))
-                .AddExporter(MarkdownExporter.GitHub);
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, config);
+            while(true)
+            {
+                var config = DefaultConfig.Instance
+    .WithSummaryStyle(SummaryStyle.Default.WithRatioStyle(RatioStyle.Trend))
+    .AddDiagnoser(MemoryDiagnoser.Default)
+    .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig(
+        printSource: true,
+        exportGithubMarkdown: true)))
+    .AddExporter(MarkdownExporter.GitHub);
+                BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, config);
+            }
             System.Console.ReadKey();
         }
     }
