@@ -6,20 +6,14 @@ namespace ArrayIteration
 {
     public abstract class ReadBenchmarksBase
     {
-        const int Seed = 42;
-        const int MaxValue = 100;
         protected int[] _array;
-        protected List<int> _list;
 
         [Params(1_000_000)]
-        // ReSharper disable once MemberCanBePrivate.Global
-        // ReSharper disable once UnusedAutoPropertyAccessor.Global
         public int Count { get; set; }
 
         [GlobalSetup]
         public void GlobalSetup()
         {
-            // ReSharper disable once HeapView.ObjectAllocation.Evident
             _array = new int[Count];
         }
 
